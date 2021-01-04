@@ -1,21 +1,22 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+APrograming JNJ Hololens prototype project. 
 
 ### What is this repository for? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* Quick summary - TODO
+* Version: 0.1
 
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* Create a Unity3d project, version 2019.1.14f1
+* Install visual studio 2019. https://visualstudio.microsoft.com/downloads/
+* Install windows 10 SDK https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk/
+* Setup your computer for development mode. Settings > Developer mode
+* Create a new Unity3d Project, In your assets file create a "JNJAssets" File. 
+* Get permission to pull from the repo
+* Clone your repo to your JNJAssets file.
+* Once you have cloned your repo, edit this readme file by signing your name at the bottom with a date. Commit your change with comment "First push"
 
 ### Contribution guidelines ###
 
@@ -25,5 +26,8 @@ This README would normally document whatever steps are necessary to get your app
 
 ### Who do I talk to? ###
 
-* Repo owner or admin
-* Other community or team contact
+* Repository master: Bradley, contact via Discord.
+* Senior developer if cant get hold of Bradley: Kenneth Hudson, contact via Discord. 
+
+### Acknowledgement ###
+* Listed below are the contributors to their project as well as the acknowledgement of reading and understanding the repo.
