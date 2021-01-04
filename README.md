@@ -14,6 +14,9 @@ APrograming JNJ Hololens prototype project.
 * Install windows 10 SDK https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk/
 * Setup your computer for development mode. Settings > Developer mode
 * Create a new Unity3d Project, In your assets file create a "JNJAssets" File. 
+* Import custom packages ( Foundation, Tools, Examples) in this order. 
+* Click apply to Foundation MRTK window to setup your environment.
+* Click import on popup for TMP essentials and extras.
 * Get permission to pull from the repo
 * Clone your repo to your JNJAssets file.
 * Once you have cloned your repo, edit this readme file by signing your name at the bottom with a date. Commit your change with comment "First push"
