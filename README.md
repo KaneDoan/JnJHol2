@@ -35,3 +35,4 @@ APrograming JNJ Hololens prototype project.
 ### Acknowledgement ###
 * Listed below are the contributors to their project as well as the acknowledgement of reading and understanding the repo.
 * Bradley Hatton-Jones, 4 Jan 2021
+* Mazen Jaber 5 Jan 2021
