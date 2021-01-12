@@ -1017,11 +1017,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 940761189535466805, guid: e13c59e75eba2e44fb6a3ab47eab0e0e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.1717
-      objectReference: {fileID: 0}
     - target: {fileID: 1020649199496545992, guid: e13c59e75eba2e44fb6a3ab47eab0e0e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1082,20 +1077,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ethicon EndoSeal
       objectReference: {fileID: 0}
-    - target: {fileID: 1020649201089811021, guid: e13c59e75eba2e44fb6a3ab47eab0e0e,
+    - target: {fileID: 1020649199496546039, guid: e13c59e75eba2e44fb6a3ab47eab0e0e,
         type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1020649201089811022, guid: e13c59e75eba2e44fb6a3ab47eab0e0e,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -11.57
-      objectReference: {fileID: 0}
-    - target: {fileID: 1917066008630381444, guid: e13c59e75eba2e44fb6a3ab47eab0e0e,
-        type: 3}
-      propertyPath: ObjectINeedToSnap
-      value: EndoPathPart2
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e13c59e75eba2e44fb6a3ab47eab0e0e, type: 3}
@@ -1110,6 +1095,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Ethicon Enseal
+      objectReference: {fileID: 0}
+    - target: {fileID: 6263093750892514553, guid: c6340b286b05d574ca00f73adf6f9590,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6263093750892514553, guid: c6340b286b05d574ca00f73adf6f9590,
+        type: 3}
+      propertyPath: m_Positions.Array.data[1].y
+      value: 0.9776393
+      objectReference: {fileID: 0}
+    - target: {fileID: 6263093750892514553, guid: c6340b286b05d574ca00f73adf6f9590,
+        type: 3}
+      propertyPath: m_Positions.Array.data[1].z
+      value: 3.0955882
+      objectReference: {fileID: 0}
+    - target: {fileID: 6288309207495589431, guid: c6340b286b05d574ca00f73adf6f9590,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6538468483375356843, guid: c6340b286b05d574ca00f73adf6f9590,
         type: 3}
@@ -1166,30 +1171,78 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9105508228040938093, guid: c6340b286b05d574ca00f73adf6f9590,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105508228040938093, guid: c6340b286b05d574ca00f73adf6f9590,
+        type: 3}
+      propertyPath: m_Positions.Array.data[1].x
+      value: 0.101999894
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105508228040938093, guid: c6340b286b05d574ca00f73adf6f9590,
+        type: 3}
+      propertyPath: m_Positions.Array.data[1].z
+      value: 3.3764782
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105508228063443321, guid: c6340b286b05d574ca00f73adf6f9590,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105508228063443321, guid: c6340b286b05d574ca00f73adf6f9590,
+        type: 3}
+      propertyPath: m_Positions.Array.data[1].y
+      value: 0.8246393
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105508229726897935, guid: c6340b286b05d574ca00f73adf6f9590,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105508229726897935, guid: c6340b286b05d574ca00f73adf6f9590,
+        type: 3}
+      propertyPath: m_Positions.Array.data[1].y
+      value: 0.9117787
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105508229726897935, guid: c6340b286b05d574ca00f73adf6f9590,
+        type: 3}
+      propertyPath: m_Positions.Array.data[1].z
+      value: 2.948671
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105508229751326810, guid: c6340b286b05d574ca00f73adf6f9590,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105508229751326810, guid: c6340b286b05d574ca00f73adf6f9590,
+        type: 3}
+      propertyPath: m_Positions.Array.data[1].y
+      value: 1.1077787
+      objectReference: {fileID: 0}
+    - target: {fileID: 9219772238056868791, guid: c6340b286b05d574ca00f73adf6f9590,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9219772238096212131, guid: c6340b286b05d574ca00f73adf6f9590,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9219772239580886465, guid: c6340b286b05d574ca00f73adf6f9590,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9219772239606725268, guid: c6340b286b05d574ca00f73adf6f9590,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6340b286b05d574ca00f73adf6f9590, type: 3}
---- !u!1 &2981969747126680794 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2830519674450404850, guid: e13c59e75eba2e44fb6a3ab47eab0e0e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1020649200182663464}
-  m_PrefabAsset: {fileID: 0}
---- !u!54 &2981969747126680798
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2981969747126680794}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1001 &7078983023736600578
 PrefabInstance:
   m_ObjectHideFlags: 0
