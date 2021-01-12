@@ -15,6 +15,7 @@ public class GripToHand : MonoBehaviour
     public bool HandObtained = false; //If the hand is found, attach yourself to it. Set as parent and follow the transform, default state is False.
     private Transform Hand; //The identified hand and its Transform.
     public GameObject hand; //The hand object
+    Vector3 center = new Vector3(0, 0, 0);
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,7 @@ public class GripToHand : MonoBehaviour
                 //find child of hand palm proxy make hand = palm
                 hand = GetChildWithName(hand, Palm);//get object with the name of the Palm string
                 HandObtained = true;
+                this.GetComponent<Collider>().enabled = true;//turn on the collider if hand exist.
             }
         }
         else if (HandObtained)
@@ -42,6 +44,8 @@ public class GripToHand : MonoBehaviour
                 // hand = GameObject.Find(NameOfHand);
                 //Debug.Log("Hand is empty"); //This function use to debug if hand is null
                 HandObtained = false;
+                this.GetComponent<Collider>().enabled = false;//turn off the collider if there no hand.
+                this.transform.position = center;//return to (0,0,0) if there no hand.
             }
 
             //Set gameobject transform == to hand
