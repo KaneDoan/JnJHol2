@@ -12,20 +12,33 @@ public class TriggerToJaw : MonoBehaviour
 {
     public GameObject TriggerObject; //The trigger object
     public bool Locked; //Identify if the trigger is locked.
-    private bool PullTriggerIn;
+    public bool PullTriggerIn = false;
 
     public float TriggerRotateSpeedIn;
     public float TriggerRotateSpeedOut;
+    private float initXAngle, xAngle, yAngle;
+    // 
+    private void Start()
+    {
+        initXAngle = TriggerObject.transform.rotation.eulerAngles.x;
 
+    }
     // Update is called once per frame
     void Update()
     {
+       
+        xAngle =  TriggerObject.transform.rotation.eulerAngles.x;
+        print(xAngle);
         //If you are locked then dont move. If you are unlocked check to see if you are being interacted with.
         if (!Locked) {
-            if (PullTriggerIn) {
+            if (PullTriggerIn && xAngle >= (initXAngle - 20)) {
+                print(xAngle);
+                
+                TriggerObject.transform.Rotate(0,-TriggerRotateSpeedIn * Time.deltaTime,0,Space.Self);
+                
 
-            } else { 
-            
+            } else {
+                //TriggerObject.transform.Rotate(TriggerRotateSpeedOut * Time.deltaTime, 0, 0);
             }
         } else { 
         

@@ -156,12 +156,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c897c097799da4a900032ad3471c47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingButtonVisuals: {fileID: 8559728207160456860}
+  movingButtonVisuals: {fileID: 0}
   distanceSpaceMode: 1
-  startPushDistance: 0.03
-  maxPushDistance: -0.005
-  pressDistance: 0.01
-  releaseDistanceDelta: 0.01
+  startPushDistance: 0.025
+  maxPushDistance: 0.03
+  pressDistance: 0.03
+  releaseDistanceDelta: 0.02
   returnSpeed: 20
   releaseOnTouchEnd: 1
   enforceFrontPush: 1
@@ -177,6 +177,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: TouchBegin
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 655099951}
+        m_MethodName: PullTheTriggerIn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
   TouchEnd:
@@ -196,26 +207,15 @@ MonoBehaviour:
   ButtonPressed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6212899867181464039}
-        m_MethodName: Play
+      - m_Target: {fileID: 0}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8373456121730090606}
-        m_MethodName: SetTextWithTimestamp
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: ButtonPressed
           m_BoolArgument: 0
         m_CallState: 2
   ButtonReleased:
@@ -415,8 +415,9 @@ GameObject:
   - component: {fileID: 3615056212520011511}
   - component: {fileID: 7796996175174729529}
   - component: {fileID: 6957714840672273040}
+  - component: {fileID: 655099951}
   m_Layer: 0
-  m_Name: TriggerMain (1)
+  m_Name: TriggerMain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -429,7 +430,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8559728207160456860}
-  m_LocalRotation: {x: 0.61237246, y: 0.6123724, z: -0.35355338, w: 0.3535534}
+  m_LocalRotation: {x: 0.5855272, y: 0.5855271, z: -0.3964316, w: 0.39643162}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.09999998, y: 0.08, z: 0.099999964}
   m_Children:
@@ -437,7 +438,7 @@ Transform:
   - {fileID: 6567547360838692484}
   m_Father: {fileID: 6274426546561621421}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 60.000004, y: 180, z: 90.00001}
+  m_LocalEulerAnglesHint: {x: 68.2, y: 180, z: 90.00001}
 --- !u!33 &3615056212520011511
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -499,6 +500,23 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2747306949164863174, guid: 64000b639adf4274eb40985eec47f562, type: 3}
+--- !u!114 &655099951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8559728207160456860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd4f6f6c4a64caf4b8c254b28429aa0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TriggerObject: {fileID: 8559728207160456860}
+  Locked: 0
+  PullTriggerIn: 0
+  TriggerRotateSpeedIn: 19.51
+  TriggerRotateSpeedOut: -20
 --- !u!1 &8769101384037303431
 GameObject:
   m_ObjectHideFlags: 0
