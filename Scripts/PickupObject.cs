@@ -13,10 +13,6 @@ public class PickupObject : MonoBehaviour
     public string NameOfObjectsHand; //Name of the object that is moving to the hand model
     public string NameOfTable; // Name of the table that the object will be placed upon.
     public bool IsObjectInUse; //Are you currently using the object in your hand.
-    public bool CanPickUp;
-    public string Palm = "Palm Proxy Transform";
-    public Vector3 offset;
-
 
     private GameObject Hand;
     private GameObject Table;
@@ -25,17 +21,20 @@ public class PickupObject : MonoBehaviour
     void Start()
     {
         IsObjectInUse = false;
-        CanPickUp = false;
     }
 
     void OnTriggerEnter(Collider other)
     {
             if (other.gameObject.name == NameOfObjectsHand) //on the object you want to pick up, in this case NameOfObjectsHand
             {
-                Debug.Log("Name of :" + NameOfObjectsHand);
                 Hand = other.gameObject; //set the gameobject you collided with to one you can reference
-                Debug.Log("Collided with: " + other.name);
                 ToHand();
+            }
+
+            if (other.gameObject.name == NameOfTable) //on the object you want to pick up, in this case NameOfTable
+        {
+                Table = other.gameObject; //set the gameobject you collided with to one you can reference
+                ToTable();
             }
     }
 
@@ -52,8 +51,8 @@ public class PickupObject : MonoBehaviour
             //Hand = GameObject.Find("CleanUpHandleV2");
             if (Hand != null)
             {
-                //find child of hand palm proxy make hand = palm
                 this.transform.parent = Hand.transform;
+                //this.transform.position = Hand.transform.position;
                 //Hand = GetChildWithName(Hand, "CleanUpHandleV2");//get object with the name of the Palm string
                 IsObjectInUse = true;
                 //this.GetComponent<Collider>().enabled = true;//turn on the collider if hand exist.
@@ -62,48 +61,29 @@ public class PickupObject : MonoBehaviour
 
         else if (IsObjectInUse)
         {
-            
-            if (Hand == null)
+            if (!Hand)
             {
-                // hand = GameObject.Find(NameOfHand);
-                //Debug.Log("Hand is empty"); //This function use to debug if hand is null
+                //Hand.transform.DetachChildren();
+                //Transform child = FindChildTransform(gameObject, this.name);
+                //child.parent = null;
                 IsObjectInUse = false;
-                
-                //this.GetComponent<Collider>().enabled = false;//turn off the collider if there no hand.
-                //this.transform.position = center;//return to (0,0,0) if there no hand.
             }
 
-            //Set gameobject transform == to hand
-            //SetParent(hand);
-            else if (Hand != null)
+
+            else if (Hand)
             {
-                this.transform.position = Hand.transform.position;
+                //this.transform.position = Hand.transform.position;
                 IsObjectInUse = true;
-                //Debug.Log("This object's position: " + this.transform.position); //Debug to see this object's position
-                //Debug.Log("Hand's position: " + hand.transform.position); //Debug to see hand's position
             }
 
         }
     }
 
     //Go to the table.
-    private void ToTable() { 
-    
+    private void ToTable() {
+        Table.gameObject.name = NameOfTable;
+        Hand.transform.DetachChildren();
+        this.transform.position = Table.transform.position + new Vector3(0, 1, 0); ;
+        IsObjectInUse = false;
     }
-
-    GameObject GetChildWithName(GameObject obj, string name)
-    {
-        Transform trans = obj.transform;
-        Transform childTrans = trans.Find(name);
-        if (childTrans != null)
-        {
-            return childTrans.gameObject;
-        }
-        else
-        {
-            return null;
-        }
-    }
-
-   
 }
