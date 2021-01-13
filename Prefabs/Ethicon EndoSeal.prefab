@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 691699157806380915}
   m_Layer: 0
-  m_Name: EndoPath Xcel Part 1
+  m_Name: EndoPathPart 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -166,7 +166,7 @@ Transform:
   m_GameObject: {fileID: 1020649199496546039}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.869, y: 0.272, z: 2.674}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.145, y: 0.145, z: 0.145}
   m_Children:
   - {fileID: 940761189535466805}
   - {fileID: 691699157806380915}
@@ -435,7 +435,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2830519674450404850}
   m_LocalRotation: {x: -0.50000006, y: -0.50000006, z: 0.49999997, w: 0.49999997}
-  m_LocalPosition: {x: 0.1717, y: 0.040108025, z: -0.05683613}
+  m_LocalPosition: {x: 0.049, y: 0.040108025, z: -0.05683613}
   m_LocalScale: {x: 0.031182129, y: 0.031182125, z: 0.031182127}
   m_Children:
   - {fileID: 1495195797095264044}
@@ -1542,7 +1542,7 @@ GameObject:
   - component: {fileID: 2451674717380138918}
   - component: {fileID: 4556596370690009087}
   - component: {fileID: 575004011932857847}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: StabDevice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1557,7 +1557,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8369106957774882318}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.016, y: -1.643, z: 0}
+  m_LocalPosition: {x: -0.047, y: -1.39, z: -0.051}
   m_LocalScale: {x: 0.31, y: 0.31, z: 0.31}
   m_Children:
   - {fileID: 1449579020103932313}
@@ -1710,10 +1710,20 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 62e72265b4edf4048bda106a4234ba88, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 78f43b4091beef64ea9e056393700d9c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 78f43b4091beef64ea9e056393700d9c,
         type: 3}
       propertyPath: m_Name
       value: TorusGuide
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 78f43b4091beef64ea9e056393700d9c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78f43b4091beef64ea9e056393700d9c, type: 3}
