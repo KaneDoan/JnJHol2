@@ -11,34 +11,46 @@ using UnityEngine;
 public class TriggerToJaw : MonoBehaviour
 {
     public GameObject TriggerObject; //The trigger object
-    public bool Locked; //Identify if the trigger is locked.
+    public GameObject TopJaw;
+    public bool Locked = false; //Identify if the trigger is locked.
     public bool PullTriggerIn = false;
 
     public float TriggerRotateSpeedIn;
     public float TriggerRotateSpeedOut;
-    private float initXAngle, xAngle, yAngle;
+    private float initXAngle, xAngle, finalXangle;
     // 
     private void Start()
     {
         initXAngle = TriggerObject.transform.rotation.eulerAngles.x;
+        finalXangle = Mathf.Round(initXAngle - 20);
 
     }
     // Update is called once per frame
     void Update()
     {
        
-        xAngle =  TriggerObject.transform.rotation.eulerAngles.x;
+        xAngle =  Mathf.Round(TriggerObject.transform.rotation.eulerAngles.x);
+       
         print(xAngle);
         //If you are locked then dont move. If you are unlocked check to see if you are being interacted with.
         if (!Locked) {
-            if (PullTriggerIn && xAngle >= (initXAngle - 20)) {
+            if (PullTriggerIn &&  xAngle >= finalXangle) {
                 print(xAngle);
                 
                 TriggerObject.transform.Rotate(0,-TriggerRotateSpeedIn * Time.deltaTime,0,Space.Self);
-                
+                TopJaw.transform.Rotate(0,  -TriggerRotateSpeedIn * Time.deltaTime * 0.5f ,0, Space.Self);
+                if ( xAngle == finalXangle)
+                {
+                    PullTriggerIn = false;
+                    LockTrigger();
+                }
+               // PullTriggerIn = false;
 
-            } else {
+            } else if ( xAngle <= initXAngle)
+            {
                 //TriggerObject.transform.Rotate(TriggerRotateSpeedOut * Time.deltaTime, 0, 0);
+                TriggerObject.transform.Rotate(0, TriggerRotateSpeedIn * Time.deltaTime, 0, Space.Self);
+                TopJaw.transform.Rotate(0, TriggerRotateSpeedIn * Time.deltaTime * 0.5f,0, Space.Self);
             }
         } else { 
         
@@ -55,6 +67,7 @@ public class TriggerToJaw : MonoBehaviour
 
     //Lock the trigger.
     public void LockTrigger() {
+       // print("LockTrigger()");
         Locked = true;
     }
 

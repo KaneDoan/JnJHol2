@@ -142,8 +142,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.004711149, y: 0.059529997, z: 0.036701906}
-  m_Center: {x: 1.6651659e-16, y: 0.024973689, z: 0.010663083}
+  m_Size: {x: 0.004711149, y: 0.059529997, z: 0.036701873}
+  m_Center: {x: 9.894697e-16, y: 0.024973689, z: 0.038006794}
 --- !u!114 &527612046173168411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,10 +158,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movingButtonVisuals: {fileID: 0}
   distanceSpaceMode: 1
-  startPushDistance: 0.025
-  maxPushDistance: 0.03
-  pressDistance: 0.03
-  releaseDistanceDelta: 0.02
+  startPushDistance: 0.021896547
+  maxPushDistance: 0.057162
+  pressDistance: 0.04916718
+  releaseDistanceDelta: 0.010784652
   returnSpeed: 20
   releaseOnTouchEnd: 1
   enforceFrontPush: 1
@@ -430,15 +430,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8559728207160456860}
-  m_LocalRotation: {x: 0.5855272, y: 0.5855271, z: -0.3964316, w: 0.39643162}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.39643165, y: -0.3964317, z: 0.58552706, w: 0.58552706}
+  m_LocalPosition: {x: -0, y: 0, z: 0.0493}
   m_LocalScale: {x: 0.09999998, y: 0.08, z: 0.099999964}
   m_Children:
   - {fileID: 1499760893920940062}
   - {fileID: 6567547360838692484}
   m_Father: {fileID: 6274426546561621421}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 68.2, y: 180, z: 90.00001}
+  m_LocalEulerAnglesHint: {x: 68.200005, y: 0, z: 90.00001}
 --- !u!33 &3615056212520011511
 MeshFilter:
   m_ObjectHideFlags: 0
