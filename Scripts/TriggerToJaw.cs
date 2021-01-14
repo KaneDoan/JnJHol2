@@ -15,7 +15,7 @@ public enum Axis
 }
 public class TriggerToJaw : MonoBehaviour
 {
-    
+
     public GameObject TriggerObject; //The trigger object
     public GameObject TopJaw;
     public float triggerRange, jawRange, ratio;
@@ -24,8 +24,7 @@ public class TriggerToJaw : MonoBehaviour
     public bool Locked = false; //Identify if the trigger is locked.
     public bool PullTriggerIn = false;
     public float TriggerRotateSpeedIn;
-    public float TriggerRotateSpeedOut;
-    public float initAngle, angle, finalAngle;
+    private float initAngle, angle, finalAngle;
     // 
     private void Start()
     {
@@ -34,95 +33,110 @@ public class TriggerToJaw : MonoBehaviour
         switch (triggerAxis)
         {
             case Axis.x:
-                initAngle = Mathf.Round(TriggerObject.transform.rotation.eulerAngles.x);
+                initAngle = Mathf.Round(TriggerObject.transform.localEulerAngles.x);
                 break;
             case Axis.y:
-                initAngle = Mathf.Round(TriggerObject.transform.rotation.eulerAngles.y);
+                initAngle = Mathf.Round(TriggerObject.transform.localEulerAngles.y);
                 break;
             case Axis.z:
-                initAngle = Mathf.Round(TriggerObject.transform.rotation.eulerAngles.z);
+                initAngle = Mathf.Round(TriggerObject.transform.localEulerAngles.z);
                 break;
         }
 
         finalAngle = Mathf.Round(initAngle - triggerRange);
-       
-  
+
+
 
     }
     // Update is called once per frame
     void Update()
     {
-       
-        //angle =  Mathf.Round(TriggerObject.transform.rotation.eulerAngles.x);
+
+        //angle =  Mathf.Round(TriggerObject.transform.rotation.localEulerAngles.x);
         switch (triggerAxis)
         {
             case Axis.x:
-                angle = Mathf.Round(TriggerObject.transform.rotation.eulerAngles.x);
+                angle = Mathf.Round(TriggerObject.transform.localEulerAngles.x);
 
                 break;
             case Axis.y:
-                angle = Mathf.Round(TriggerObject.transform.rotation.eulerAngles.y);
+                angle = Mathf.Round(TriggerObject.transform.localEulerAngles.y);
                 break;
 
             case Axis.z:
-                angle = Mathf.Round(TriggerObject.transform.rotation.eulerAngles.z);
+                angle = Mathf.Round(TriggerObject.transform.localEulerAngles.z);
                 break;
         }
 
         print(angle);
         //If you are locked then dont move. If you are unlocked check to see if you are being interacted with.
         //if (angle == finalAngle || angle == initAngle && !PullTriggerIn)
-       // {
+        // {
 
         //    LockTrigger();
         //}
-        if (!Locked) {
-            
+        if (!Locked)
+        {
 
-            if (PullTriggerIn &&  angle >= finalAngle) {
 
-                RotateGameObject(TriggerObject,triggerAxis, -TriggerRotateSpeedIn * Time.deltaTime);
-                RotateGameObject(TopJaw, jawAxis,-TriggerRotateSpeedIn * Time.deltaTime * ratio);
-                if ( angle == finalAngle)
+            if (PullTriggerIn && angle >= finalAngle)
+            {
+
+                          RotateGameObject(TriggerObject, triggerAxis, -TriggerRotateSpeedIn * Time.deltaTime);
+                RotateGameObject(TopJaw, jawAxis, -TriggerRotateSpeedIn * Time.deltaTime * ratio);
+
+                if (angle == finalAngle)
                 {
                     PullTriggerIn = false;
                     LockTrigger();
                 }
-             
 
-                        } else if ( angle > initAngle)
-            {
-       
-                RotateGameObject(TriggerObject, triggerAxis, TriggerRotateSpeedIn * Time.deltaTime);
-                RotateGameObject(TopJaw, jawAxis, TriggerRotateSpeedIn * Time.deltaTime * ratio);
-        
 
             }
-        } 
+            else if (angle < initAngle)
+            {
+
+                RotateGameObject(TriggerObject, triggerAxis, TriggerRotateSpeedIn * Time.deltaTime);
+                RotateGameObject(TopJaw, jawAxis, TriggerRotateSpeedIn * Time.deltaTime * ratio);
+
+
+            }
+        }
 
 
 
     }
 
 
-    public void PullTheTriggerIn() {
+    public void PullTheTriggerIn()
+    {
         PullTriggerIn = true;
     }
-    public void PullTheTriggerOut() {
+    public void PullTheTriggerOut()
+    {
         PullTriggerIn = false;
     }
 
     //Lock the trigger.
-    public void LockTrigger() {
-       // print("LockTrigger()");
+    public void LockTrigger()
+    {
+        // print("LockTrigger()");
         Locked = true;
+    }
+    public void UnlockGrip()
+    {
+       if(gameObject.CompareTag("Grip") && Locked)
+        {
+            UnlockTrigger();
+        }
     }
 
     //Unlock the trigger
-    public void UnlockTrigger() {
+    public void UnlockTrigger()
+    {
         Locked = false;
     }
-    private void RotateGameObject(GameObject gameObject,Axis axis, float value)
+    private void RotateGameObject(GameObject gameObject, Axis axis, float value)
     {
         switch (axis)
         {
@@ -130,10 +144,10 @@ public class TriggerToJaw : MonoBehaviour
                 gameObject.transform.Rotate(value, 0, 0, Space.Self);
                 break;
             case Axis.y:
-                gameObject.transform.Rotate(0 , value , 0, Space.Self);
+                gameObject.transform.Rotate(0, value, 0, Space.Self);
                 break;
             case Axis.z:
-                gameObject.transform.Rotate(0 , 0, value, Space.Self);
+                gameObject.transform.Rotate(0, 0, value, Space.Self);
                 break;
         }
     }
